@@ -1,0 +1,13 @@
+set 1
+shl 1
+shl 1
+or 1
+or 2
+shl 2
+xor 10
+xor 10
+and 4
+set 1c
+and 3
+set 1c
+shr 1
