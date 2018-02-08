@@ -34,3 +34,31 @@ calculator program you've created and stored:
 Note that in order to keep track of which calculator command to execute
 next, you will need to keep track of where you are in the array.
 
+Example
+-------
+
+    $ ./debug-calculator
+    list
+     1 set 1
+     2 shl 1
+    step
+    print
+     1
+    list
+     1 set 1
+     2 shl 1
+     3 shl 1
+    step
+    print
+    2
+    list
+     2 shl 1
+     3 shl 1
+     4 or 1
+    run
+    print
+    e
+    list
+    12 set 1c
+    13 shr 1
+
