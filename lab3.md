@@ -10,12 +10,12 @@ than reading them one at a time:
  * Create a `struct` to hold a command, its argument, and its line number
    (the first command is line 1, the second is line 2, and so on).
 
- * Create an array of `struct`s to hold several statements as a calculator
+ * Create an array of structs to hold several statements as a calculator
    program.
 
- * Use the C initializer syntax [Modern C, Level 1, Sections 2.3 and 6.3]
-   [2] to hard-code the array of `struct`s to hold the calculator program
-   from `lab2.input`, rather than reading commands with `scanf()`.
+ * Use the C initializer syntax [Modern C, Level 1, Sections 2.3 and 6.3][2]
+   to hard-code the array of structs to hold the calculator program from
+   `lab2.input`, rather than reading commands with `scanf()`.
 
   [1]: https://github.com/ProfAvery/cpsc223c
   [2]: http://icube-icps.unistra.fr/img_auth.php/d/db/ModernC.pdf
