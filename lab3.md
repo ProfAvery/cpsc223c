@@ -43,7 +43,7 @@ Example
      2 shl 1
     step
     print
-     1
+    1
     list
      1 set 1
      2 shl 1
