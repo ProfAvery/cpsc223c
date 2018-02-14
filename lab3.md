@@ -24,12 +24,12 @@ Now, instead of using `scanf()` to read calculator commands, your program
 should use `scanf()` to read commands describing what to do with the
 calculator program you've created and stored:
 
-| Command | Action                                            |
-| ------- | ------------------------------------------------- |
-| step    | Execute the next calculator command               |
-| run     | Execute the rest of the calculator commands       |
-| print   | Print the current byte value                      |
-| list    | Print the current, previous, and next commands    |
+| Command  | Action                                            |
+| -------- | ------------------------------------------------- |
+| step     | Execute the next calculator command               |
+| continue | Execute the rest of the calculator commands       |
+| print    | Print the current byte value                      |
+| list     | Print the current, previous, and next commands    |
 
 Note that in order to keep track of which calculator command to execute
 next, you will need to keep track of the current location in the array.
