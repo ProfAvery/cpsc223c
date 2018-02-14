@@ -17,4 +17,6 @@ cc -std=c11 -g -Og \
     -fno-diagnostics-show-option "$1" -o "$executable" \
 || exit $?
 
-exec "./$executable"
+"./$executable"
+
+trap 'rm "$executable"' EXIT
