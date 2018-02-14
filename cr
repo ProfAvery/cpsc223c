@@ -12,7 +12,7 @@ if [ "$1" = "$executable" ]; then
     exit 2
 fi
 
-cc -std=c11 -g -Og \
+cc -std=c11 -g \
     -Wall -Wextra -Wpedantic -Werror \
     -fno-diagnostics-show-option "$1" -o "$executable" \
 || exit $?

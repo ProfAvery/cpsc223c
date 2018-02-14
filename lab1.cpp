@@ -4,9 +4,9 @@
  *  This code should compile cleanly with the following options:
  *
  
-    C:   -std=c11   -g -Og -Wall -Wextra -Wpedantic
+    C:   -std=c11   -g -Wall -Wextra -Wpedantic
 
-    C++: -std=c++11 -g -Og -Wall -Wextra -Wpedantic
+    C++: -std=c++11 -g -Wall -Wextra -Wpedantic
 
  */
 
