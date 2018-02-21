@@ -55,7 +55,7 @@ Example
      2 shl 1
      3 shl 1
      4 or 1
-    run
+    continue
     print
     e
     list
