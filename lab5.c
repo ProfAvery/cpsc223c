@@ -11,7 +11,6 @@
  *
  */
 
-
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -75,8 +74,8 @@ int main(int argc, char *argv[])
         for (size_t j = 0; j < strlen(arg); j++) {
             stack_push(s, arg[j]);
         }
-        char c;
 
+        char c;
         while ((c = stack_pop(s)) != EOF) {
             printf("%c", c);
         }
