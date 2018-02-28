@@ -17,6 +17,7 @@ cc -std=c11 -g \
     -fno-diagnostics-show-option "$1" -o "$executable" \
 || exit $?
 
-"./$executable"
+shift
+"./$executable" "$@"
 
 trap 'rm "$executable"' EXIT
