@@ -3,12 +3,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define MAX_COMMAND_SIZE 3
+#define MAX_BYTE_COMMAND_SIZE 3
+#define MAX_DEBUG_COMMAND_SIZE 8
 #define PROGRAM_SIZE 13
 
 struct statement {
     int line;
-    char command[MAX_COMMAND_SIZE + 1];
+    char command[MAX_BYTE_COMMAND_SIZE + 1];
     unsigned int argument;
 };
 
@@ -89,7 +90,7 @@ void do_list()
 
 int main(void)
 {
-    char command[MAX_COMMAND_SIZE + 1];
+    char command[MAX_DEBUG_COMMAND_SIZE + 1];
 
     while (scanf("%s", command) != EOF) {
 
