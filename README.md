@@ -5,6 +5,6 @@ Clone me with:
 If you already have a local repository, try:
 
     $ git pull
-    $ git init submodules
-    $ git update submodules
+    $ git submodule init
+    $ git submodule update
 
