@@ -11,7 +11,7 @@
 
 CC=gcc
 INCLUDES=-I$(DEBUGDIR) -I$(BSTRDIR)
-CFLAGS = -g -std=c11 -Wall -Wextra -Wpedantic -Wkrror \
+CFLAGS = -g -std=c11 -Wall -Wextra -Wpedantic -Werror \
 	-Wfloat-equal -Wlogical-op -Wshadow -Wswitch-default \
 	-Wbad-function-cast -Wcast-qual -Waggregate-return \
 	-fno-diagnostics-show-option $(INCLUDES)
