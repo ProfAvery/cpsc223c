@@ -1,6 +1,17 @@
+# Lab 6 - Makefile
+#
+# Re-write your solutions to Lab1 and Lab 3 to use The Better String Library
+#
+# You may use lab1.c and lab3.c from ../solutions at a 10% penalty
+#
+# This Makefile expects your code to be in files named lab1.c and lab3.c
+#
+# Do not change this Makefile; submit your updated C code to Dropbox.
+#
+
 CC=gcc
 INCLUDES=-I$(DEBUGDIR) -I$(BSTRDIR)
-CFLAGS = -g -std=c11 -Wall -Wextra -Wpedantic -Werror \
+CFLAGS = -g -std=c11 -Wall -Wextra -Wpedantic -Wkrror \
 	-Wfloat-equal -Wlogical-op -Wshadow -Wswitch-default \
 	-Wbad-function-cast -Wcast-qual -Waggregate-return \
 	-fno-diagnostics-show-option $(INCLUDES)
