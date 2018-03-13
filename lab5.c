@@ -50,6 +50,9 @@ void stack_push(struct stack *s, unsigned char c)
 {
     assert(s != NULL);
 
+    // REMOVE THE FOLLOWING LINE BEFORE ADDING YOUR CODE
+    (void) c;
+
     // INSERT CODE HERE
 }
 
@@ -57,7 +60,7 @@ int stack_pop(struct stack *s)
 {
     assert(s != NULL);
 
-    unsigned char c;
+    unsigned char c = EOF;
 
     // INSERT CODE HERE
 
