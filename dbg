@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 src.c" 1>&2
+    echo "       $0 executable" 1>&2
+    exit 1
+fi
+
+executable=$(basename "$1" '.c')
+
+if [ "$1" != "$executable" ]; then
+    should_compile=true
+fi
+
+if [ "$should_compile" = true ]; then
+    gcc -std=c11 -g \
+        -Wall -Wextra -Wpedantic -Werror \
+        -fno-diagnostics-show-option "$1" -o "$executable" \
+    || exit $?
+fi
+
+gdb "./$executable" -ex 'break main' -ex run -ex list
+
+trap 'test "$should_compile" = true && rm "$executable"' EXIT
