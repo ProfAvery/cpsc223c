@@ -12,9 +12,9 @@ struct command {
 
 extern struct command commands[NUM_COMMANDS];
 
-int compare_by_name(char *);
-int compare_by_office(char *);
-int compare_by_phone(char *);
-int compare_by_email(char *);
+int find_by_name(char *);
+int find_by_office(char *);
+int find_by_phone(char *);
+int find_by_email(char *);
 
 #endif

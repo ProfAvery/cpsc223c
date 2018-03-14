@@ -7,11 +7,11 @@ faculty][1] in the Computer Science department.
 
 You are given the following modules:
 
-| Files                      | Purpose                                           |
-| -------------------------- | ------------------------------------------------- | 
-| `main.c`                   | Main program                                      |
-| `commands.c`, `commands.h` | Command table and comparison function definitions |
-| `faculty.c`, `faculty.h`   | Contents of phonebook                             |
+| Files                      | Purpose                               |
+| -------------------------- | ------------------------------------- | 
+| `main.c`                   | Main program                          |
+| `commands.c`, `commands.h` | Command table and command definitions |
+| `faculty.c`, `faculty.h`   | Contents of phonebook                 |
 
 Complete the following:
 
@@ -21,13 +21,15 @@ Complete the following:
    * Name the executable program `phonebook`
    * Be careful with dependencies; only re-compile when necessary
 
-2. Implement the comparison functions in `commands.c` to compare entries
-   in the `faculty` array
+2. Implement the find functions in `commands.c` to find entries in the
+   `faculty` array
+   * Note that you will need to implement functions to compare two
+     `professor` structs based on their fields
 
 3. Modify `main.cpp` to:
-   * Use `argc`, `argv`, and `bsearch()` to find the appropriate
-     comparison function pointer from the `commands` table
-   * Pass the comparison function pointer to `qsort()` and `bsearch()`
+   * Use `argc`, `argv`, and `bsearch()` to find the appropriate find
+     command function pointer from the `commands` table
+   * Pass the command function pointer to `qsort()` and `bsearch()`
      in order to search the `faculty` array for the given arguments
    * Print the matching record
 

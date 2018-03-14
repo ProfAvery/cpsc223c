@@ -12,7 +12,7 @@ struct professor faculty[NUM_FACULTY] = {
     { "Floyd Holliday",           "CS-513", "(657) 278-7021", "holliday@fullerton.edu" },
     { "Inventado, Paul Salvador", "CS-534", "(657) 278-3821", "pinventado@fullerton.edu" },
     { "Jo, Chang-Hyun",           "CS-425", "(657) 278-7255", "cjo@fullerton.edu" },
-    { "Panangadan, Anand",         "CS-538", "(657) 278-3998", "apanangadan@fullerton.edu" },
+    { "Panangadan, Anand",        "CS-538", "(657) 278-3998", "apanangadan@fullerton.edu" },
     { "Ryu, Christopher T.",      "CS-421", "(657) 278-7231", "tryu@fullerton.edu" },
     { "Tian, Yun",                "CS-538", "(657) 278-2041", "ytian@fullerton.edu" },
     { "Wang, Shawn",              "CS-532", "(657) 278-7258", "xwang@fullerton.edu" },
