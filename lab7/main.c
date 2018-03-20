@@ -7,8 +7,8 @@
 
 int main(int argc, char *argv[])
 {
-    (void) argc;
-    (void) argv;
+    // REMOVE THE FOLLOWING LINE BEFORE ADDING YOUR CODE
+    (void) argc; (void) argv;
 
     // INSERT CODE HERE
 
