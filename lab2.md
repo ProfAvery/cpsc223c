@@ -38,7 +38,7 @@ Tips
    rather than typing it in one line at a time, e.g.
 
     ```
-    $ ./calculator < lab2.input`
+    $ ./calculator < lab2.input
     ```
 
 2. You can save the output of your program by redirecting its output, e.g.
