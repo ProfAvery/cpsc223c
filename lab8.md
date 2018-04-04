@@ -28,7 +28,7 @@ Use `getopt()` to parse the command-line options, as described in Chapter
 
 *Note*: In order to use `getopt()` you will need to:
 1. Include `<unistd.h>`
-2. Modify `CFLAGS` to include `_POSIX_C_SOURCE=200801L`
+2. Modify `CFLAGS` to include `-D_POSIX_C_SOURCE=200801L`
 
 [1]: https://github.com/ProfAvery/cpsc223c/blob/master/lab6/Makefile
 [2]: https://github.com/ProfAvery/cpsc223c/blob/master/lab2.md
@@ -40,7 +40,7 @@ Examples
     $ ./calculator lab2.input 
     e
 
-    $ cat >> extra.input <<EOF
+    $ cat > extra.input <<EOF
     > set 42
     > EOF
 
@@ -98,4 +98,3 @@ Examples
     shr 1 => e
     set 42 => 42
     quit
-
