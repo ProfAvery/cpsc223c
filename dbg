@@ -3,6 +3,7 @@
 if [ -z "$1" ]; then
     echo "Usage: $0 src.c" 1>&2
     echo "       $0 executable" 1>&2
+    echo "       $0 executable core" 1>&2
     exit 1
 fi
 
@@ -12,13 +13,23 @@ if [ "$1" != "$executable" ]; then
     should_compile=true
 fi
 
+if [ -z "$2" ]; then
+    set_breakpoint=true
+fi
+
 if [ "$should_compile" = true ]; then
     gcc -std=c11 -g \
         -Wall -Wextra -Wpedantic -Werror \
+        -Wfloat-equal -Wlogical-op -Wshadow -Wswitch-default \
+        -Wbad-function-cast -Wcast-qual -Waggregate-return \
         -fno-diagnostics-show-option "$1" -o "$executable" \
     || exit $?
 fi
 
-gdb "./$executable" -ex 'break main' -ex run -ex list
+if [ "$set_breakpoint" = true ]; then
+    gdb "$executable" -ex 'break main' -ex run -ex list
+else
+    gdb "$executable" "$2"
+fi
 
 trap 'test "$should_compile" = true && rm "$executable"' EXIT

@@ -24,8 +24,8 @@ struct node {
     struct node *next;
 };
 
-struct node *head;
-struct node *current;
+struct node *first_instruction;
+struct node *current_instruction;
 
 uint8_t byte = 0;
 
@@ -114,30 +114,30 @@ void free_list(struct node *start)
 
 void do_step()
 {
-    if (current == NULL) {
+    if (current_instruction == NULL) {
         return;
     }
 
-    if (strcmp(current->command, "set") == 0) {
-        byte = current->argument;
-    } else if (strcmp(current->command, "and") == 0) {
-        byte &= current->argument;
-    } else if (strcmp(current->command, "or") == 0) {
-        byte |= current->argument;
-    } else if (strcmp(current->command, "xor") == 0) {
-        byte ^= current->argument;
-    } else if (strcmp(current->command, "shr") == 0) {
-        byte >>= current->argument;
-    } else if (strcmp(current->command, "shl") == 0) {
-        byte <<= current->argument;
+    if (strcmp(current_instruction->command, "set") == 0) {
+        byte = current_instruction->argument;
+    } else if (strcmp(current_instruction->command, "and") == 0) {
+        byte &= current_instruction->argument;
+    } else if (strcmp(current_instruction->command, "or") == 0) {
+        byte |= current_instruction->argument;
+    } else if (strcmp(current_instruction->command, "xor") == 0) {
+        byte ^= current_instruction->argument;
+    } else if (strcmp(current_instruction->command, "shr") == 0) {
+        byte >>= current_instruction->argument;
+    } else if (strcmp(current_instruction->command, "shl") == 0) {
+        byte <<= current_instruction->argument;
     }
 
-    current = current->next;
+    current_instruction = current_instruction->next;
 }
 
 void do_continue()
 {
-    while (current != NULL) {
+    while (current_instruction != NULL) {
         do_step();
     }
 }
@@ -149,7 +149,7 @@ void do_print()
 
 struct node *find_prev(struct node *start)
 {
-    struct node *prev = head;
+    struct node *prev = first_instruction;
 
     while (prev->next != start) {
         prev = prev->next;
@@ -158,30 +158,30 @@ struct node *find_prev(struct node *start)
     return prev;
 }
 
-void do_list(struct node *head)
+void do_list(void)
 {
-    if (current == head) {
-        print_node(current);
-        print_node(current->next);
-    } else if (current == NULL) {
-        struct node *prev = find_prev(current);
+    if (current_instruction == first_instruction) {
+        print_node(current_instruction);
+        print_node(current_instruction->next);
+    } else if (current_instruction == NULL) {
+        struct node *prev = find_prev(current_instruction);
         struct node *prevprev = find_prev(prev);
 
         print_node(prevprev);
         print_node(prev);
     } else {
-        struct node *prev = find_prev(current);
+        struct node *prev = find_prev(current_instruction);
 
         print_node(prev);
-        print_node(current);
-        print_node(current->next);
+        print_node(current_instruction);
+        print_node(current_instruction->next);
     }
 }
 
 int main(void)
 {
-    head = create_list();
-    current = head;
+    first_instruction = create_list();
+    current_instruction = first_instruction;
 
     char command[MAX_DEBUG_COMMAND_SIZE + 1];
 
@@ -194,12 +194,12 @@ int main(void)
         } else if (strcmp(command, "print") == 0) {
             do_print();
         } else if (strcmp(command, "list") == 0) {
-            do_list(head);
+            do_list();
         }
 
     }
 
-    free_list(head);
+    free_list(first_instruction);
 
     return EXIT_SUCCESS;
 }

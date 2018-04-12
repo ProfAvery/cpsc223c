@@ -12,12 +12,16 @@ if [ "$1" = "$executable" ]; then
     exit 2
 fi
 
+rm -f core
+ulimit -c unlimited
 cc -std=c11 -g \
     -Wall -Wextra -Wpedantic -Werror \
+    -Wfloat-equal -Wlogical-op -Wshadow -Wswitch-default \
+    -Wbad-function-cast -Wcast-qual -Waggregate-return \
     -fno-diagnostics-show-option "$1" -o "$executable" \
 || exit $?
 
 shift
 "./$executable" "$@"
 
-trap 'rm "$executable"' EXIT
+trap 'test -f core || rm "$executable"' EXIT
