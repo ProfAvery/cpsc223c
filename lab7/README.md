@@ -41,10 +41,10 @@ Examples
 -------
 
     $ ./phonebook
-    Usage: phonebook <command> <string>
+    Usage: ./phonebook <command> <string>
 
     $ ./phonebook email
-    Usage: phonebook <command> <string>
+    Usage: ./phonebook <command> <string>
 
     $ ./phonebook email kwortman@fullerton.edu
     Wortman, Kevin
