@@ -40,7 +40,7 @@ void bump_string(char *s, char *c)
     }
 }
 
-int main()
+int main(void)
 {
     int i = 1;
 

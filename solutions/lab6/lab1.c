@@ -38,7 +38,7 @@ void bump_string(bstring s, char *c)
     CHECK_BSTR_OK(bconchar(s, new));
 }
 
-int main()
+int main(void)
 {
     int i = 1;
 

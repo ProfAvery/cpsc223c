@@ -33,7 +33,7 @@ int counter = 0;
 
 uint8_t byte = 0;
 
-void do_step()
+void do_step(void)
 {
     if (counter >= PROGRAM_SIZE) {
         return;
@@ -56,14 +56,14 @@ void do_step()
     }
 }
 
-void do_continue()
+void do_continue(void)
 {
     for (int i = counter; i < PROGRAM_SIZE; i++) {
         do_step();
     }
 }
 
-void do_print()
+void do_print(void)
 {
     printf("%x\n", byte);
 }
@@ -73,7 +73,7 @@ void print_statement(int i)
     printf("%2d %s %x\n", program[i].line, program[i].command, program[i].argument);
 }
 
-void do_list()
+void do_list(void)
 {
     if (counter == 0) {
         print_statement(counter);

@@ -46,14 +46,14 @@ void do_step(void)
     current_instruction = current_instruction->next;
 }
 
-void do_continue()
+void do_continue(void)
 {
     while (current_instruction != NULL) {
         do_step();
     }
 }
 
-void do_print()
+void do_print(void)
 {
     printf("%x\n", byte);
 }

@@ -112,7 +112,7 @@ void free_list(struct node *start)
     }
 }
 
-void do_step()
+void do_step(void)
 {
     if (current_instruction == NULL) {
         return;
@@ -135,14 +135,14 @@ void do_step()
     current_instruction = current_instruction->next;
 }
 
-void do_continue()
+void do_continue(void)
 {
     while (current_instruction != NULL) {
         do_step();
     }
 }
 
-void do_print()
+void do_print(void)
 {
     printf("%x\n", byte);
 }
