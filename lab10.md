@@ -44,14 +44,15 @@ of times the word occurs, sorted in alphabetical order:
     times           1
     word            2
 
-Use at least the following GLib features:
+Consider using at least the following GLib features:
  * [I/O Channels][3] (to read the text file)
  * [Balanced Binary Trees][4] (to store the words and their counts)
  * [String Utility Functions][5]
 
-*Hint*: other features may be useful as well.
+*Hint*: other features may be useful as well; the [GLib documentation][1]
+repays close study.
 
-Provide a `Makefile` to link your progrma with GLib.
+Provide a `Makefile` to link your program with GLib.
 
 [1]: https://developer.gnome.org/glib/2.48/
 [2]: http://en.cppreference.com/w/c/string/byte/ispunct 
