@@ -10,7 +10,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(PROG)
 
-phonebook: $(OBJS)
+$(PROG): $(OBJS)
 	$(CC) $(OBJS) -o $(PROG)
 
 main.o: main.c commands.h faculty.h
