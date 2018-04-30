@@ -1,10 +1,10 @@
 # Lab 6 - Makefile
 #
-# Re-write your solutions to Lab1 and Lab 3 to use The Better String Library
+# Re-write your solutions to Lab 1 and Lab 3 to use The Better String Library
 #
-# You may use lab1.c and lab3.c from ../solutions at a 10% penalty
+# You may use lab01.c and lab03.c from ../solutions at a 10% penalty
 #
-# This Makefile expects your code to be in files named lab1.c and lab3.c
+# This Makefile expects your code to be in files named lab01.c and lab03.c
 #
 # Do not change this Makefile; submit your updated C code to Dropbox.
 #
@@ -16,16 +16,16 @@ CFLAGS = -g -std=c11 -Wall -Wextra -Wpedantic -Werror \
 	-Wbad-function-cast -Wcast-qual -Waggregate-return \
 	-fno-diagnostics-show-option $(INCLUDES)
 
-LAB1PROG = lab1
-LAB1SRCS = lab1.c
-LAB1OBJS = $(LAB1SRCS:.c=.o)
+LAB01PROG = lab01
+LAB01SRCS = lab01.c
+LAB01OBJS = $(LAB01SRCS:.c=.o)
 
-LAB3PROG = lab3
-LAB3SRCS = lab3.c
-LAB3OBJS = $(LAB3SRCS:.c=.o)
+LAB03PROG = lab03
+LAB03SRCS = lab03.c
+LAB03OBJS = $(LAB03SRCS:.c=.o)
 
-PROGS = $(LAB1PROG) $(LAB3PROG)
-SRCS = $(LAB1SRCS) $(LAB3SRCS)
+PROGS = $(LAB01PROG) $(LAB03PROG)
+SRCS = $(LAB01SRCS) $(LAB03SRCS)
 OBJS = $(SRCS:.c=.o)
 
 BSTRDIR = ../bstrlib
@@ -37,15 +37,15 @@ DEBUGDIR = ../debug
 
 all: $(PROGS)
 
-lab1: $(LAB1OBJS) $(BSTROBJS)
-	$(CC) $(LAB1OBJS) $(BSTROBJS) -o $(LAB1PROG)
+lab01: $(LAB01OBJS) $(BSTROBJS)
+	$(CC) $(LAB01OBJS) $(BSTROBJS) -o $(LAB01PROG)
 
-lab3: $(LAB3OBJS) $(BSTROBJS)
-	$(CC) $(LAB3OBJS) $(BSTROBJS) -o $(LAB3PROG)
+lab03: $(LAB03OBJS) $(BSTROBJS)
+	$(CC) $(LAB03OBJS) $(BSTROBJS) -o $(LAB03PROG)
 
-lab1.o: lab1.c
+lab01.o: lab01.c
 
-lab3.o: lab3.c
+lab03.o: lab03.c
 
 $(BSTRDIR)/%.o: $(BSTRDIR)/%.c $(BSTRDIR)/%.h
 	$(CC) $(BSTRFLAGS) -c $< -o $@

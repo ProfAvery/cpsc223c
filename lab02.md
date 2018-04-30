@@ -29,7 +29,7 @@ OUTPUT: `set 4 => 4`
 INPUT: `shr 1`  
 OUTPUT: `shr 1 => 2`  
 
-A longer example can be found in the files `lab2.input` and `lab2.output`.
+A longer example can be found in the files `lab02.input` and `lab02.output`.
 
 Tips
 ----
@@ -38,20 +38,20 @@ Tips
    rather than typing it in one line at a time, e.g.
 
     ```
-    $ ./calculator < lab2.input
+    $ ./calculator < lab02.input
     ```
 
 2. You can save the output of your program by redirecting its output, e.g.
 
     ```
-    $ ./calculator < lab2.input > lab2.test
+    $ ./calculator < lab02.input > lab02.test
     ```
 
 3. The UNIX `diff` command can tell you if one file is different from
    another, e.g.
 
     ```
-    $ diff lab2.output lab2.test
+    $ diff lab02.output lab02.test
     2c2
     < shl 1 => 2
     ---

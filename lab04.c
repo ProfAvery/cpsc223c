@@ -1,4 +1,4 @@
-// lab4.c - starter code for Lab 4
+// lab04.c - starter code for Lab 4
 
 /*
  * Convert your program from Lab 3 to use a linked list instead of an array.

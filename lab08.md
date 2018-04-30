@@ -30,24 +30,24 @@ Use `getopt()` to parse the command-line options, as described in Chapter
 1. Include `<unistd.h>`
 2. Modify `CFLAGS` to include `-D_POSIX_C_SOURCE=200801L`
 
-[1]: https://github.com/ProfAvery/cpsc223c/blob/master/lab6/Makefile
-[2]: https://github.com/ProfAvery/cpsc223c/blob/master/lab2.md
+[1]: https://github.com/ProfAvery/cpsc223c/blob/master/lab06/Makefile
+[2]: https://github.com/ProfAvery/cpsc223c/blob/master/lab02.md
 [3]: http://bitsinthewind.com/about-dac/publications/unix-systems-programming
 
 Examples
 -------
 
-    $ ./calculator lab2.input 
+    $ ./calculator lab02.input 
     e
 
     $ cat > extra.input <<EOF
     > set 42
     > EOF
 
-    $ ./calculator lab2.input extra.input
+    $ ./calculator lab02.input extra.input
     42
 
-    $ ./calculator -v lab2.input extra.input
+    $ ./calculator -v lab02.input extra.input
     set 1 => 1
     shl 1 => 2
     shl 1 => 4
@@ -63,7 +63,7 @@ Examples
     shr 1 => e
     set 42 => 42
 
-    $ ./calculator -d lab2.input extra.input
+    $ ./calculator -d lab02.input extra.input
     list
      1 set 1
      2 shl 1
@@ -73,7 +73,7 @@ Examples
     14 set 42
     quit
 
-    $ ./calculator -d -v lab2.input extra.input
+    $ ./calculator -d -v lab02.input extra.input
     list
      1 set 1
      2 shl 1

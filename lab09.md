@@ -100,7 +100,7 @@ to load the sorted array and `bsearch()` to search it.
  * Don't forget to include `CFLAGS` with all the switches from [Lab 6][3].
 
 
-[1]: https://github.com/ProfAvery/cpsc223c/blob/master/lab7/
-[2]: https://github.com/ProfAvery/cpsc223c/blob/master/lab8.md
-[3]: https://github.com/ProfAvery/cpsc223c/blob/master/lab6/Makefile
+[1]: https://github.com/ProfAvery/cpsc223c/blob/master/lab07/
+[2]: https://github.com/ProfAvery/cpsc223c/blob/master/lab08.md
+[3]: https://github.com/ProfAvery/cpsc223c/blob/master/lab06/Makefile
 

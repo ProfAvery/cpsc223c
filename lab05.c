@@ -1,4 +1,4 @@
-// lab5.c - starter code for Lab 5
+// lab05.c - starter code for Lab 5
 
 /*
  * Complete the definitions for the stack_*() functions so that main()
@@ -26,8 +26,6 @@ struct stack_element {
     struct stack_element *next;
 };
 
-int stack_pop(struct stack *);
-
 struct stack *stack_create(void)
 {
     struct stack *s = malloc(sizeof(struct stack));
@@ -36,8 +34,7 @@ struct stack *stack_create(void)
         exit(EXIT_FAILURE);
     }
 
-    s->top = NULL;
-    s->element_count = 0;
+    // INSERT CODE HERE
 
     return s;
 }
@@ -46,28 +43,17 @@ void stack_destroy(struct stack *s)
 {
     assert(s != NULL);
 
-    while (s->element_count > 0) {
-        stack_pop(s);
-    }
-
-    free(s);
+    // INSERT CODE HERE
 }
 
 void stack_push(struct stack *s, unsigned char c)
 {
     assert(s != NULL);
 
-    struct stack_element *e = malloc(sizeof(struct stack_element));
-    if (e == NULL) {
-        fprintf(stderr, "%s:%d: malloc() returned NULL\n", __FILE__, __LINE__);
-        exit(EXIT_FAILURE);
-    }
-    
-    e->c = c;
-    e->next = s->top;
-    
-    s->element_count++;
-    s->top = e;
+    // REMOVE THE FOLLOWING LINE BEFORE ADDING YOUR CODE
+    (void) c;
+
+    // INSERT CODE HERE
 }
 
 int stack_pop(struct stack *s)
@@ -76,16 +62,7 @@ int stack_pop(struct stack *s)
 
     unsigned char c = EOF;
 
-    if (s->element_count > 0) {
-        struct stack_element *e = s->top;
-
-        c = e->c;
-
-        s->element_count--;
-        s->top = e->next;
-
-        free(e);
-    }
+    // INSERT CODE HERE
 
     return c;
 }

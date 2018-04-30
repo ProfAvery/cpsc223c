@@ -15,7 +15,7 @@ than reading them one at a time:
 
  * Use the C initializer syntax from [Modern C, Level 1, Sections 2.3
    and 6.3][2] to hard-code the array of structs to hold the calculator
-   program from `lab2.input`, rather than reading commands with `scanf()`.
+   program from `lab02.input`, rather than reading commands with `scanf()`.
 
   [1]: https://github.com/ProfAvery/cpsc223c
   [2]: http://icube-icps.unistra.fr/img_auth.php/d/db/ModernC.pdf

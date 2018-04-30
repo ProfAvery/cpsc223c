@@ -1,4 +1,4 @@
-// lab1.cpp - convert this code to C11
+// lab01.cpp - convert this code to C11
 
 /*
  *  This code should compile cleanly with the following options:

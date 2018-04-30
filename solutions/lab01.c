@@ -1,4 +1,4 @@
-// lab1.cpp - convert this code to C11
+// lab01.cpp - convert this code to C11
 
 /*
  *  This code should compile cleanly with the following options:
@@ -10,13 +10,11 @@
 
  */
 
-#include <assert.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 
-#include "bstrlib.h"
-#include "checks.h"
-
+#define MAX_STRING_SIZE 10
 
 void bump_int(int *i, int *amount)
 {
@@ -29,13 +27,17 @@ void bump_int(int *i, int *amount)
     }
 }
 
-void bump_string(bstring s, char *c)
+void bump_string(char *s, char *c)
 {
     assert (s != NULL);
 
     char new = (c == NULL)? 'o' : *c;
 
-    CHECK_BSTR_OK(bconchar(s, new));
+    int len = strlen(s);
+    if (len + 1 <= MAX_STRING_SIZE) {
+        s[len] = new;
+        s[len + 1] = '\0';
+    }
 }
 
 int main(void)
@@ -50,18 +52,15 @@ int main(void)
     bump_int(&i, &amount);
     printf("%d\n", i);
 
-    bstring s;
-    CHECK_NOT_NULL(s = bfromStatic("foo"));
+    char s[MAX_STRING_SIZE + 1] = "foo";
 
-    printf("%s\n", s->data);
+    printf("%s\n", s);
     bump_string(s, NULL);
-    printf("%s\n", s->data);
+    printf("%s\n", s);
 
     char c = 'x';
     bump_string(s, &c);
-    printf("%s\n", s->data);
-
-    CHECK_BSTR_OK(bdestroy(s));
+    printf("%s\n", s);
 
     return 0;
 }
