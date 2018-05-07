@@ -14,7 +14,6 @@ of times the word occurs, sorted in alphabetical order:
     > number of times the word occurs, sorted in alphabetical order:
     >
     > The quick brown fox jumped over the lazy dog.
-    > The 
     > EOF
 
     $ ./freq file.txt
