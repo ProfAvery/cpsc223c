@@ -1,0 +1,4 @@
+Output should contain each word in the text file followed by the
+number of times the word occurs, sorted in alphabetical order:
+
+The quick brown fox jumped over the lazy dog.
