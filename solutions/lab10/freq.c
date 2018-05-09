@@ -81,7 +81,7 @@ gboolean print_key_value(gpointer key, gpointer value, gpointer data)
     gchar *word = key;
     gint *count = value;
     
-    printf ("%-15s\t%d\n", word, *count);
+    g_printf("%-15s\t%d\n", word, *count);
 
     return FALSE;
 }
