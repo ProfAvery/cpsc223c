@@ -54,11 +54,6 @@ gpointer *new_value(gint i)
     return (gpointer) pi;
 }
 
-void destroy_value(gpointer data)
-{
-    g_free(data);
-}
-
 void build_tree(GTree *tree, gchar **words) {
     for (int i = 0; words[i] != NULL; i++) {
         if (words[i][0] == '\0') {
@@ -97,7 +92,7 @@ int main(int argc, char *argv[])
     GString *delimiters = build_split_set();
     gchar **words = g_strsplit_set(contents, delimiters->str, -1);
 
-    GTree *tree = g_tree_new_full(compare_keys, NULL, NULL, destroy_value);
+    GTree *tree = g_tree_new_full(compare_keys, NULL, NULL, g_free);
     build_tree(tree, words);
     g_tree_foreach(tree, print_key_value, NULL);
 
