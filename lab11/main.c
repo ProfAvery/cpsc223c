@@ -28,30 +28,30 @@ void list_inventory(Automobile *inventory[], int size)
 int main(void)
 {
     Car c = {
-        .parent.make     = "BMW",
-        .parent.model    = 2017,
-        .parent.mileage  = 50000,
-        .parent.price    = 15000.0,
+        .parent.make    = "BMW",
+        .parent.model   = 2017,
+        .parent.mileage = 50000,
+        .parent.price   = 15000.0,
         .doors          = 4,
-        .parent.vptr     = &Car_vtable,
+        .parent.vptr    = &Car_vtable,
     };
 
     Truck t = {
-        .parent.make     = "Toyota",
-        .parent.model    = 2006,
-        .parent.mileage  = 40000,
-        .parent.price    = 12000.0,
+        .parent.make    = "Toyota",
+        .parent.model   = 2006,
+        .parent.mileage = 40000,
+        .parent.price   = 12000.0,
         .driveType      = "4WD",
-        .parent.vptr     = &Truck_vtable,
+        .parent.vptr    = &Truck_vtable,
     };
 
     SUV s = {
-        .parent.make     = "Volvo",
-        .parent.model    = 2005,
-        .parent.mileage  = 30000,
-        .parent.price    = 18000.0,
+        .parent.make    = "Volvo",
+        .parent.model   = 2005,
+        .parent.mileage = 30000,
+        .parent.price   = 18000.0,
         .passengers     = 5,
-        .parent.vptr     = &SUV_vtable,
+        .parent.vptr    = &SUV_vtable,
     };
 
     Automobile *stock[] = {
